@@ -35,4 +35,9 @@ return require('packer').startup(function()
 
   use 'lukas-reineke/indent-blankline.nvim'
 
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
 end)
