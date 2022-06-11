@@ -19,6 +19,4 @@ opt.wrap = false
 require('conf')
 
 -- Set Colorscheme
-local catppuccin = require("catppuccin")
-vim.g.catppuccin_flavour = "mocha"
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd[[colorscheme nord]]

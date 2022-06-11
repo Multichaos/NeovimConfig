@@ -12,8 +12,6 @@ return require('packer').startup(function()
   requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use 'feline-nvim/feline.nvim'
-
   use({
 	"catppuccin/nvim",
 	as = "catppuccin"
@@ -39,5 +37,12 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+
+  use 'shaunsingh/nord.nvim'
+
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
 
 end)

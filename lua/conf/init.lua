@@ -1,4 +1,5 @@
-require("conf.feline")
+--require("conf.feline")
+require("conf.lualine")
 require("conf.bufferline")
 require("conf.neoscroll")
 require("conf.nvim-cmp")
