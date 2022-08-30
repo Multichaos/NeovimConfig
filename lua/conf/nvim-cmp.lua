@@ -63,17 +63,18 @@ require('lspconfig')['clangd'].setup {
 capabilities = capabilities
 }
 
-require('lspconfig')['rls'].setup {
-capabilities = capabilities
-}
-
 require('lspconfig')['pyright'].setup {
 capabilities = capabilities
 }
 
+<<<<<<< HEAD
 require('lspconfig')['eslint'].setup {
 capabilities = capabilities
 }
 require('lspconfig')['emmet_ls'].setup {
 capabilities = capabilities
+=======
+require('lspconfig')['tsserver'].setup {
+    capabilities = capabilities
+>>>>>>> d9cdee2 (Added CoC and removed cmp)
 }

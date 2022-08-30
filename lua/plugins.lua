@@ -12,24 +12,9 @@ return require('packer').startup(function()
   requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
-	"catppuccin/nvim",
-	as = "catppuccin"
-  })
-
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
   use 'karb94/neoscroll.nvim'
-
-  use 'neovim/nvim-lspconfig'
-
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
 
   use 'lukas-reineke/indent-blankline.nvim'
 
@@ -41,9 +26,28 @@ return require('packer').startup(function()
   use 'shaunsingh/nord.nvim'
 
   use {
+<<<<<<< HEAD
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
   use 'windwp/nvim-ts-autotag'
+=======
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
+  use 'windwp/nvim-ts-autotag'
+
+  use {
+      'neoclide/coc.nvim',
+      branch = 'release'
+  }
+  use 'Mofiqul/dracula.nvim'
+  use 'windwp/nvim-autopairs'
+
+  use {'TimUntersberger/neogit', 
+        requires = 'nvim-lua/plenary.nvim' 
+  }
+>>>>>>> d9cdee2 (Added CoC and removed cmp)
 end)
