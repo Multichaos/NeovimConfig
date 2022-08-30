@@ -70,3 +70,10 @@ capabilities = capabilities
 require('lspconfig')['pyright'].setup {
 capabilities = capabilities
 }
+
+require('lspconfig')['eslint'].setup {
+capabilities = capabilities
+}
+require('lspconfig')['emmet_ls'].setup {
+capabilities = capabilities
+}
