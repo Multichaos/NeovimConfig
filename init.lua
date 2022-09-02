@@ -19,4 +19,4 @@ opt.wrap = false
 require('conf')
 
 -- Set Colorscheme
-vim.cmd[[colorscheme dracula]]
+require('onedark').load()
