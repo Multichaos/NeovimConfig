@@ -26,13 +26,6 @@ return require('packer').startup(function()
   use 'shaunsingh/nord.nvim'
 
   use {
-<<<<<<< HEAD
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-
-  use 'windwp/nvim-ts-autotag'
-=======
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
@@ -49,5 +42,4 @@ return require('packer').startup(function()
   use {'TimUntersberger/neogit', 
         requires = 'nvim-lua/plenary.nvim' 
   }
->>>>>>> d9cdee2 (Added CoC and removed cmp)
 end)
