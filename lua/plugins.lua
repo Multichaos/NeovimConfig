@@ -17,6 +17,15 @@ return require('packer').startup(function()
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
+  use({
+    'glepnir/lspsaga.nvim',
+    branch='main',
+    config=function()
+        require("lspsaga").setup({})
+    end,
+    requires = {{'nvim-tree/nvim-web-devicons'}}
+  })
+
   use {'ms-jpq/coq_nvim', branch = 'coq'}
   use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
   
@@ -50,7 +59,4 @@ return require('packer').startup(function()
   use 'Mofiqul/dracula.nvim'
   use 'windwp/nvim-autopairs'
 
-  use {'TimUntersberger/neogit', 
-        requires = 'nvim-lua/plenary.nvim' 
-  }
 end)
