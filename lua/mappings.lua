@@ -28,3 +28,9 @@ mapper("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 mapper({"n", "t"}, "<Leader>ot", "<cmd>Lspsaga term_toggle<CR>")
 mapper("n", "<Leader>og", "<cmd>Lspsaga open_floaterm('lazygit')<CR>")
 
+-- nvim-tree mappings
+mapper("n", "<Leader>tt", "<cmd>NvimTreeToggle<CR>")
+mapper("n", "<Leader>tf", "<cmd>NvimTreeFocus<CR>")
+mapper("n", "<Leader>to", "<cmd>NvimTreeFindFile<CR>")
+mapper("n", "<Leader>tc", "<cmd>NvimTreeCollapse<CR>")
+

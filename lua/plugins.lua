@@ -34,6 +34,13 @@ return require('packer').startup(function()
   requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+          'nvim-tree/nvim-web-devicons',
+      }
+  }
+
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
   use 'karb94/neoscroll.nvim'
@@ -45,8 +52,6 @@ return require('packer').startup(function()
     run = ':TSUpdate'
   }
 
-  use 'shaunsingh/nord.nvim'
-
   use 'navarasu/onedark.nvim'
 
   use {
@@ -56,7 +61,6 @@ return require('packer').startup(function()
 
   use 'windwp/nvim-ts-autotag'
 
-  use 'Mofiqul/dracula.nvim'
   use 'windwp/nvim-autopairs'
 
 end)

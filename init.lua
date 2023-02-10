@@ -15,6 +15,8 @@ opt.expandtab = true
 opt.smartindent = true
 opt.tabstop = 4
 opt.wrap = false
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 require('conf')
 
