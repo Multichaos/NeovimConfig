@@ -2,6 +2,12 @@ local mapper = function(mode, key, result)
     vim.keymap.set(mode, key, result, { noremap = true, silent = true })
 end
 
+-- Window mappings
+mapper("n", "<Leader>h", "<cmd>wincmd h<CR>")
+mapper("n", "<Leader>j", "<cmd>wincmd j<CR>")
+mapper("n", "<Leader>k", "<cmd>wincmd k<CR>")
+mapper("n", "<Leader>l", "<cmd>wincmd l<CR>")
+
 --Telescope mappings
 local telescope_builtin = require("telescope.builtin")
 mapper("n", "<Leader>ff", telescope_builtin.find_files) 
