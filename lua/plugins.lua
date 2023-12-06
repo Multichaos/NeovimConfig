@@ -1,68 +1,59 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
-
-return require('packer').startup(function()
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
-
-  use({
-    'glepnir/lspsaga.nvim',
-    branch='main',
-    config=function()
-        require("lspsaga").setup({})
-    end,
-    requires = {{'nvim-tree/nvim-web-devicons'}}
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
   })
+end
+vim.opt.rtp:prepend(lazypath)
 
-  use {'ms-jpq/coq_nvim', branch = 'coq'}
-  use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+require('lazy').setup({
+  'wbthomason/packer.nvim',
+
+  'neovim/nvim-lspconfig',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/nvim-cmp',
+  'L3MON4D3/LuaSnip',
+  'saadparwaiz1/cmp_luasnip',
+  {'nvim-lua/plenary.nvim', name="plenary"},
+  {'kyazdani42/nvim-web-devicons', name="devicons"},
+
+  {'glepnir/lspsaga.nvim', 
+    branch='main',
+    dependencies={"devicons"}
+  },
+
+  {'ms-jpq/coq_nvim', branch="coq"},
+  {'ms-jpq/coq.artifacts', branch="artifacts"},
   
-  use {
-  'nvim-telescope/telescope.nvim',
-  requires = { {'nvim-lua/plenary.nvim'} }
-  }
+  {'nvim-telescope/telescope.nvim', dependencies={"plenary"}},
 
-  use {
-      'nvim-tree/nvim-tree.lua',
-      requires = {
-          'nvim-tree/nvim-web-devicons',
-      }
-  }
+  {'nvim-tree/nvim-tree.lua', dependencies={"devicons"}},
 
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  {'akinsho/bufferline.nvim', tag="v2.*", dependencies={"devicons"}},
 
-  use 'karb94/neoscroll.nvim'
+  'karb94/neoscroll.nvim',
 
-  use 'lukas-reineke/indent-blankline.nvim'
+  'lukas-reineke/indent-blankline.nvim',
 
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+  {'nvim-treesitter/nvim-treesitter', build = ":TSUpdate"},
 
-  use 'navarasu/onedark.nvim'
+  'navarasu/onedark.nvim',
 
-  use 'sainnhe/everforest'
+  'sainnhe/everforest',
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  {'nvim-lualine/lualine.nvim', dependencies = {"devicons"}},
 
-  use 'windwp/nvim-ts-autotag'
+  'windwp/nvim-ts-autotag',
 
-  use 'windwp/nvim-autopairs'
-
-end)
+  'windwp/nvim-autopairs'
+  
+})

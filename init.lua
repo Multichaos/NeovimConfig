@@ -21,7 +21,6 @@ vim.g.loaded_netrwPlugin = 1
 require('conf')
 
 -- Set Colorscheme
---require('onedark').load()
 vim.cmd([[
 set background=dark
 let g:everforest_background='soft'
